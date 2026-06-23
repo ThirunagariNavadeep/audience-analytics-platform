@@ -45,3 +45,23 @@ dist/
 
 # Docker
 docker-compose.override.yml
+
+# ==============================
+# DATASETS
+# ==============================
+data/
+
+# Models
+models/
+
+# Logs
+logs/
+
+# MLflow
+mlruns/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Environment
+.env
