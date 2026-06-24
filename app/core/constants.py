@@ -41,3 +41,8 @@ DEFAULT_SCHEMA = "public"
 API_VERSION = "v1"
 
 LOGGER_NAME = "audience_analytics"
+
+MOVIELENS_DATA_DIR = RAW_DATA_DIR / "movielens"
+IMDB_DATA_DIR = RAW_DATA_DIR / "imdb"
+TMDB_DATA_DIR = RAW_DATA_DIR / "tmdb"
+SYNTHETIC_DATA_DIR = RAW_DATA_DIR / "synthetic"
