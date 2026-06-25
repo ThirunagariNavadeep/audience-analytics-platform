@@ -1,7 +1,7 @@
 """
-User Feature Builder
+Streaming User Feature Builder
 
-Builds user-level behavioral features
+Builds user-level statistics incrementally
 from MovieLens ratings data.
 """
 
@@ -9,63 +9,65 @@ import pandas as pd
 from app.core.logging import logger
 
 class UserFeatureBuilder:
-    def build(
+    def __init__(self):
+        """
+        Intialize the feature builder
+        """
+        self.user_statistics = {}
+
+    def process_chunk(
         self,
-        ratings_df: pd.DataFrame
+        chunk: pd.DataFrame
     ) -> pd.DataFrame:
 
-        logger.info("Building User Features")
-        ratings_df = ratings_df.copy()
+        """
+        Build user statistics for one chunk.
 
-        ratings_df["timestamp"] = pd.to_datetime(
-            ratings_df["timestamp"],
-            unit = "s"
+        Returns a summarized DataFrame
+        containing one row per user.
+        """
+        logger.info(f"Processing chunk with {len(chunk):,} rows")
+
+        chunk = chunk.copy()
+        chunk["timestamp"] = pd.to_datetime(
+            chunk["timestamp"],
+            unit = 's'
         )
 
-        user_features = (
-            ratings_df
+        chunk_summary = (
+            chunk
             .groupby("userId")
             .agg(
-                total_ratings = (
-                    "rating",
-                    "count"
-                ),
-                avg_ratings = (
-                    "rating",
-                    "mean"
-                ),
-                min_rating = (
-                    "rating",
-                    "min"
-                ),
-                max_ratings = (
-                    "rating",
-                    "max"
-                ),
-                rating_std = (
-                    "rating",
-                    "std"
-                ),
-                movies_watched = (
+                rating_count = ("rating", "count"),
+                rating_sum = ("rating", "sum"),
+                rating_min = ("rating", "min"),
+                rating_max = ("rating", "max"),
+                movies_seen = (
                     "movieId",
-                    "nunique"
+                    lambda x: set(x)
                 ),
-                first_rating_date = (
+
+                first_timestamp = (
                     "timestamp",
                     "min"
                 ),
-                last_rating_date = (
+
+                last_timestamp = (
                     "timestamp",
                     "max"
                 )
-            )
+            )        
             .reset_index()
+
+            chunk_summary = chunk_summary.rename(
+                columns = {
+                    "userId": "user_id"
+                }
+            )
         )
 
-        user_features["active_days"] = (
-            user_features["last_rating_date"] - user_features["first_rating_date"]
-        ).dt.days 
+        logger.info(f"Chunk summarized into {len(chunk_summary):,} users")
 
-        logger.info("User Feature Generation Complete")
+        return chunk_summary
 
-        return user_features
+
