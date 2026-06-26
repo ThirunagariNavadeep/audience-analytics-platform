@@ -1,7 +1,5 @@
 """
 Feature Models
-
-Dataclasses used during feature engineering.
 """
 
 from dataclasses import dataclass, field
@@ -26,4 +24,22 @@ class UserStatistics:
     first_timestamp: datetime | None = None
 
     last_timestamp: datetime | None = None
+
+    def average_rating(self) -> float:
+        """
+        Compute Average Rating
+        """
+
+        if self.rating_count == 0:
+            return 0.0
+        return (
+            self.rating_sum / self.rating_count
+        )
+
+    def movies_watched(self) -> int:
+        """
+        Number of Unique Movies
+        """
+
+        return len(self.movies_seen)
 
