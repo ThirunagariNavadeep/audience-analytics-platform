@@ -35,16 +35,13 @@ class UserFeatureBuilder:
             f"Processing chunk with {len(chunk):,} rows"
         )
 
-        # Work on a copy
         chunk = chunk.copy()
 
-        # Convert Unix timestamp to datetime
         chunk["timestamp"] = pd.to_datetime(
             chunk["timestamp"],
             unit="s"
         )
 
-        # Summarize this chunk
         chunk_summary = (
             chunk
             .groupby("userId")
@@ -69,7 +66,7 @@ class UserFeatureBuilder:
             .reset_index()
         )
 
-        # Standardize column names
+      
         chunk_summary = chunk_summary.rename(
             columns={
                 "userId": "user_id"
@@ -186,3 +183,5 @@ class UserFeatureBuilder:
         )
 
         return user_features
+
+        print(total_chunks)
