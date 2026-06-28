@@ -65,3 +65,6 @@ mlruns/
 
 # Environment
 .env
+
+# TMDB cache
+data/cache/

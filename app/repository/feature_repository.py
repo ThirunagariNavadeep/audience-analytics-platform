@@ -85,6 +85,15 @@ class FeatureRepository:
             Path("data/analytics/analytics_movies.parquet")
         )
 
+    def load_processed_links(
+        self
+    ) -> pd.DataFrame:
+        """
+        Load processed MovieLens links dataset.
+        """
+
+        return self._load_parquet(self.processed_dir / "links_clean.parquet")
+
 
 
 
