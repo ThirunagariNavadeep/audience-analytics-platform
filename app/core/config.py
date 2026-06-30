@@ -29,6 +29,10 @@ class Settings(BaseSettings):
     TMDB_READ_ACCESS_TOKEN: str
     TMDB_BASE_URL: str = "https://api.themoviedb.org/3"
 
+    # OMDB
+    OMDB_API_KEY: str
+    OMDB_BASE_URL: str 
+
     # AWS
     AWS_ACCESS_KEY_ID: str = ""
     AWS_SECRET_ACCESS_KEY: str = ""
