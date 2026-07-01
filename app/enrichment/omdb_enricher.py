@@ -1,10 +1,3 @@
-"""
-OMDb Enricher
-
-Enriches the analytics movie dataset
-with metadata from OMDb.
-"""
-
 import pandas as pd
 
 from app.core.logging import logger
@@ -13,11 +6,8 @@ from app.enrichment.omdb_mapper import OMDbMapper
 
 
 class OMDbEnricher:
-    """
-    Enrich analytics dataset with OMDb metadata.
-    """
-
     def __init__(self) -> None:
+        
 
         self.client = OMDBClient()
 
