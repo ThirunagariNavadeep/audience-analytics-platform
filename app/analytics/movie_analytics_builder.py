@@ -1,16 +1,7 @@
-"""
-Movie Analytics Builder
-
-Creates an analytics-ready movie dataset.
-"""
 import pandas as pd 
 from app.core.logging import logger
 
 class MovieAnalyticsBuilder:
-    """
-    Merge engineered movie statistics with processed movie metadata.
-    """
-
     def build (
         self,
         movies: pd.DataFrame,
