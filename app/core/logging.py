@@ -1,10 +1,3 @@
-"""
-Centralized logging configuration.
-
-Every module in the application should use this logger
-instead of using print().
-"""
-
 import logging
 from pathlib import Path
 
