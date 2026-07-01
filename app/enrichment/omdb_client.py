@@ -1,9 +1,3 @@
-"""
-OMDb Client
-
-Handles communication with the OMDb API.
-"""
-
 from pathlib import Path 
 from typing import Any
 import json
@@ -12,10 +6,6 @@ from app.core.config import settings
 from app.core.logging import logger
 
 class OMDBClient:
-    """
-    Client for interacting with the OMDB API.
-    """
-
     def __init__(self) -> None:
         self.base_url = settings.OMDB_BASE_URL
 
