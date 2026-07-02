@@ -1,25 +1,13 @@
-"""
-OMDb Mapper
-
-Converts OMDb API responses into OMDbMovie objects.
-"""
-
 from app.enrichment.omdb_models import OMDbMovie
 
 
 class OMDbMapper:
-    """
-    Maps raw OMDb JSON into OMDbMovie objects.
-    """
-
+    
     def map_movie(
         self,
         data: dict
     ) -> OMDbMovie:
-        """
-        Convert an OMDb API response into an OMDbMovie.
-        """
-
+       
         return OMDbMovie(
 
             imdb_id=data["imdbID"],
