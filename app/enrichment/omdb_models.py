@@ -1,18 +1,9 @@
-"""
-OMDb Data Models
-
-Defines the data structures used for OMDb enrichment.
-"""
-
 from dataclasses import dataclass
 
 
 @dataclass(slots=True)
 class OMDbMovie:
-    """
-    Represents a movie returned by the OMDb API.
-    """
-
+   
     imdb_id: str
 
     title: str
