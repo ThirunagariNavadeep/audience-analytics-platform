@@ -1,10 +1,3 @@
-"""
-TMDB Enricher
-
-Enriches the analytics movie dataset
-with metadata from TMDB.
-"""
-
 import pandas as pd
 
 from app.core.logging import logger
@@ -13,11 +6,7 @@ from app.enrichment.tmdb_mapper import TMDBMapper
 
 
 class TMDBEnricher:
-    """
-    Enrich analytics dataset with TMDB metadata.
-    """
-
-    def __init__(self) -> None:
+     def __init__(self) -> None:
 
         self.client = TMDBClient()
 
