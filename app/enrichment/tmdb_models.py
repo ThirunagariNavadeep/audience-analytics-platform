@@ -1,15 +1,8 @@
-"""
-TMDB Data Models
-
-Defines the data structures used for TMDB enrichment.
-"""
 from dataclasses import dataclass, field
 
 @dataclass(slots = True)
 class TMDBMovie:
-    """
-    Represents a movie returned by the TMDB API.
-    """
+   
     tmdb_id: int
     title: str
     release_date: str | None = None
