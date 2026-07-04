@@ -1,9 +1,3 @@
-"""
-TMDB Client
-
-Handles communication with The Movie Database (TMDB) API.
-"""
-
 from typing import Any
 import requests
 import os
@@ -13,9 +7,7 @@ from app.core.logging import logger
 from pathlib import Path 
 
 class TMDBClient:
-    """
-    Client for interacting with the TMDB API.
-    """
+   
 
     def __init__(self) -> None:
         self.base_url = settings.TMDB_BASE_URL

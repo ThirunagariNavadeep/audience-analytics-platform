@@ -1,17 +1,8 @@
-"""
-TMDB Dataset Validator
-
-Validates the enriched TMDB movie dataset.
-"""
-
 import pandas as pd 
 from app.core.logging import logger
 
 class TMDBValidator:
-    """
-    Validate the enriched TMDB dataset.
-    """
-
+   
     def validate(
         self,
         dataframe: pd.DataFrame

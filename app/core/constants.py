@@ -1,10 +1,3 @@
-"""
-Application-wide constants.
-
-This module stores values that are shared across the application.
-Avoid hardcoding repeated values throughout the codebase.
-"""
-
 from pathlib import Path 
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]

@@ -1,9 +1,3 @@
-"""
-OMDb Dataset Validator
-
-Validates the enriched OMDb dataset.
-"""
-
 import pandas as pd 
 from app.core.logging import logger
 
