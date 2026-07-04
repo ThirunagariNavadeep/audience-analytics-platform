@@ -1,22 +1,12 @@
-"""
-TMDB Mapper
-
-Converts TMDB API responses into TMDBMovie objects.
-"""
 from app.enrichment.tmdb_models import TMDBMovie
 
 class TMDBMapper:
-    """
-    Maps raw TMDB JSON into TMDBMovie objects.
-    """
-
+    
     def map_movie(
         self,
         data: dict
     ) -> TMDBMovie:
-        """
-        Convert a TMDB API response into a TMDBMovie.
-        """
+       
         return TMDBMovie(
             tmdb_id = data["id"],
             title = data["title"],
