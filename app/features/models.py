@@ -1,16 +1,10 @@
-"""
-Feature Models
-"""
 
 from dataclasses import dataclass, field
 from datetime import datetime
 
 @dataclass
 class UserStatistics:
-    """
-    Running statistics for one user.
-    """
-
+   
     rating_count: int = 0
 
     rating_sum: float =  0.0
