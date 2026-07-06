@@ -1,10 +1,3 @@
-"""
-Streaming Movie Feature Builder
-
-Builds movie-level statistics incrementally
-from MovieLens ratings data.
-"""
-
 import pandas as pd
 
 from app.core.logging import logger
