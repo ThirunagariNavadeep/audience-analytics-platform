@@ -24,10 +24,7 @@ class FeatureWriter:
         dataframe: pd.DataFrame,
         filename: str
     ) -> Path:
-        """
-        Save a DataFrame as a Parquet file.
-        """
-
+       
         output_path = self.output_dir / filename
 
         dataframe.to_parquet(
@@ -46,10 +43,7 @@ class FeatureWriter:
         dataframe: pd.DataFrame,
         filename: str
     ) -> Path:
-        """
-        Save a DataFrame as CSV.
-        """
-
+       
         output_path = self.output_dir / filename
 
         dataframe.to_csv(
