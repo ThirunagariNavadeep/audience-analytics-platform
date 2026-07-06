@@ -15,7 +15,7 @@ class TemporalFeatures:
         current_year = datetime.now().year 
 
         if "movie_age" not in df.columns:
-            df["movie_age"] = (current_year - df["release_year"])
+            df["movie_age"] = (current_year - df["release_year"]).fillna(-1)
 
         df["release_decade"] = ((df["release_year"] // 10) * 10)
 

@@ -1,19 +1,9 @@
-"""
-Feature Repository
-
-Provides a centralized interface for loading
-engineered datasets.
-"""
-
 from pathlib import Path 
 import pandas as pd 
 from app.core.logging import logger
 
 class FeatureRepository:
-    """
-    Repository for loading engineered datasets.
-    """
-
+   
     def __init__(
         self,
         feature_dir: Path = Path("data/features"),
@@ -95,5 +85,40 @@ class FeatureRepository:
         return self._load_parquet(self.processed_dir / "links_clean.parquet")
 
 
+    def save_parquet(
+        self,
+        dataframe: pd.DataFrame,
+        filename: str 
+    ) -> None:
 
+        self.feature_dir.mkdir(
+            parents = True,
+            exist_ok = True
+        )
+
+        output_path = self.feature_dir / filename
+
+        logger.info(f"Saving dataset: {output_path.name}")
+
+        dataframe.to_parquet(
+            output_path,
+            index = False
+        )
+
+    def save_csv(
+        self,
+        dataframe: pd.DataFrame,
+        filename: str 
+    ) -> None:
+
+        self.feature_dir.mkdir(
+            parents = True,
+            exist_ok = True
+        )
+
+        output_path = self.feature_dir / filename
+
+        logger.info(f"Saving dataset: {output_path.name}")
+
+        dataframe.to_csv(output_path, index = False)
 
