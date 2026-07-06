@@ -1,9 +1,3 @@
-"""
-Feature Writer
-
-Persists engineered features to disk.
-"""
-
 from pathlib import Path
 
 import pandas as pd
@@ -12,10 +6,7 @@ from app.core.logging import logger
 
 
 class FeatureWriter:
-    """
-    Saves feature datasets.
-    """
-
+    
     def __init__(
         self,
         output_dir: Path
