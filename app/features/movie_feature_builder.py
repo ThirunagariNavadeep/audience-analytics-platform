@@ -68,11 +68,7 @@ class MovieFeatureBuilder:
         self,
         chunk_summary: pd.DataFrame
     ) -> None:
-        """
-        Merge summarized statistics into
-        the global movie statistics.
-        """
-
+      
         logger.info(
             "Merging chunk statistics"
         )
