@@ -7,10 +7,7 @@ from app.features.movie_models import MovieStatistics
 class MovieFeatureBuilder:
 
     def __init__(self):
-        """
-        Initialize the global movie statistics dictionary.
-        """
-
+       
         self.movie_statistics: dict[int, MovieStatistics] = {}
 
     def process_chunk(
