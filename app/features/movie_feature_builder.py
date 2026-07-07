@@ -117,11 +117,7 @@ class MovieFeatureBuilder:
     def finalize(
         self
     ) -> pd.DataFrame:
-        """
-        Convert accumulated statistics into
-        a movie feature DataFrame.
-        """
-
+      
         logger.info(
             "Building final movie feature dataset"
         )
