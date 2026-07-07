@@ -14,10 +14,7 @@ class MovieFeatureBuilder:
         self,
         chunk: pd.DataFrame
     ) -> None:
-        """
-        Process one chunk of ratings data.
-        """
-
+     
         logger.info(
             f"Processing chunk with {len(chunk):,} rows"
         )
