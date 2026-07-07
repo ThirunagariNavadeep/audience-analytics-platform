@@ -5,9 +5,6 @@ from app.features.movie_models import MovieStatistics
 
 
 class MovieFeatureBuilder:
-    """
-    Streaming feature engineering for movie-level statistics.
-    """
 
     def __init__(self):
         """
