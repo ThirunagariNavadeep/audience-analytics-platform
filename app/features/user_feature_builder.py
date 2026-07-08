@@ -115,11 +115,7 @@ class UserFeatureBuilder:
     def finalize(
         self
     ) -> pd.DataFrame:
-        """
-        Convert accumulated statistics into
-        a user feature DataFrame.
-        """
-
+    
         logger.info(
             "Building final user feature dataset"
         )
