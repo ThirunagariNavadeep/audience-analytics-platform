@@ -1,10 +1,3 @@
-"""
-Streaming User Feature Builder
-
-Builds user-level statistics incrementally
-from MovieLens ratings data.
-"""
-
 import pandas as pd
 
 from app.core.logging import logger
@@ -12,15 +5,9 @@ from app.features.models import UserStatistics
 
 
 class UserFeatureBuilder:
-    """
-    Streaming feature engineering for user-level statistics.
-    """
-
+    
     def __init__(self):
-        """
-        Initialize the global user statistics dictionary.
-        """
-
+     
         self.user_statistics: dict[int, UserStatistics] = {}
 
     def process_chunk(
