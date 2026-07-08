@@ -14,10 +14,7 @@ class UserFeatureBuilder:
         self,
         chunk: pd.DataFrame
     ) -> None:
-        """
-        Process one chunk of ratings data.
-        """
-
+     
         logger.info(
             f"Processing chunk with {len(chunk):,} rows"
         )
@@ -70,11 +67,7 @@ class UserFeatureBuilder:
         self,
         chunk_summary: pd.DataFrame
     ) -> None:
-        """
-        Merge summarized statistics into
-        the global user statistics.
-        """
-
+     
         logger.info(
             "Merging chunk statistics"
         )
