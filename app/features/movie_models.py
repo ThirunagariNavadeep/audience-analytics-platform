@@ -3,9 +3,6 @@ from datetime import datetime
 
 @dataclass
 class MovieStatistics:
-    """
-    Running statistics for one movie.
-    """
 
     rating_count: int = 0
 
@@ -22,17 +19,12 @@ class MovieStatistics:
     last_rating: datetime | None = None 
 
     def average_rating(self) -> float:
-        """
-        Compute the average rating.
-        """
+    
         if self.rating_count == 0:
             return 0.0
 
         return self.rating_sum / self.rating_count
 
     def total_users(self) -> int:
-        """
-        Number of unique users who rated the movie.
-        """
-
+      
         return len(self.unique_users)
