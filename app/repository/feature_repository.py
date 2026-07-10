@@ -19,10 +19,7 @@ class FeatureRepository:
         self,
         file_path: Path 
     ) -> pd.DataFrame:
-        """
-        Load a parquet dataset.
-        """
-
+       
         if not file_path.exists():
             raise FileNotFoundError(
                 f"Dataset not found: {file_path}"
@@ -37,9 +34,7 @@ class FeatureRepository:
     def load_user_features(
         self
     ) -> pd.DataFrame:
-        """
-        Load a parquet dataset.
-        """
+     
         return self._load_parquet(
             self.feature_dir / "user_features.parquet"
         )
@@ -47,9 +42,7 @@ class FeatureRepository:
     def load_movie_features(
         self
     ) -> pd.DataFrame:
-        """
-        Load movie feature dataset.
-        """
+     
         return self._load_parquet(
             self.feature_dir / "movie_features.parquet"
         )
@@ -57,9 +50,7 @@ class FeatureRepository:
     def load_processed_movies(
         self
     ) -> pd.DataFrame:
-        """
-        Load processed movie metadata.
-        """
+    
         return self._load_parquet(
             self.processed_dir / "movies_clean.parquet"
         )
@@ -67,10 +58,7 @@ class FeatureRepository:
     def load_analytics_movies(
         self
     ) -> pd.DataFrame:
-        """
-        Load the analytics movie dataset:
-        """
-
+     
         return self._load_parquet(
             Path("data/analytics/analytics_movies.parquet")
         )
@@ -78,10 +66,7 @@ class FeatureRepository:
     def load_processed_links(
         self
     ) -> pd.DataFrame:
-        """
-        Load processed MovieLens links dataset.
-        """
-
+      
         return self._load_parquet(self.processed_dir / "links_clean.parquet")
 
 
