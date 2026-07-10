@@ -8,10 +8,7 @@ class AnalyticsValidator:
         self,
         dataframe: pd.DataFrame
     ) -> dict:
-        """
-        Validate the analytics dataset.
-        """
-
+     
         logger.info("Validating analytics dataset")
 
         report = {
