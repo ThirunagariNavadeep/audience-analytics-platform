@@ -1,20 +1,10 @@
-"""
-Analytics Dataset Validator
-
-Performs quality checks on the analytics dataset.
-"""
-
 import pandas as pd
 
 from app.core.logging import logger
 
 
 class AnalyticsValidator:
-    """
-    Validates the analytics movie dataset.
-    """
-
-    def validate(
+     def validate(
         self,
         dataframe: pd.DataFrame
     ) -> dict:
