@@ -1,10 +1,3 @@
-"""
-Content-Based Recommender
-
-Generates movie recommendations using
-the Similarity Engine.
-"""
-
 import pandas as pd
 
 from app.core.logging import logger
