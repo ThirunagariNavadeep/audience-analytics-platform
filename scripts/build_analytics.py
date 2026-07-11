@@ -1,11 +1,3 @@
-"""
-Analytics Dataset Pipeline
-
-Builds the analytics-ready movie dataset,
-saves it to disk, validates the output,
-and prints a pipeline summary.
-"""
-
 from pathlib import Path
 import time
 
