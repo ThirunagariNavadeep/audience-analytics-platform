@@ -16,7 +16,7 @@ def main() -> None:
 
     start_time = time.perf_counter()
 
-    # Initialize components
+  
     loader = ChunkLoader(
         Path("data/raw/movielens/ratings.csv"),
         chunk_size=100_000
