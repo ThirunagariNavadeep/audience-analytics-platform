@@ -9,10 +9,7 @@ from app.features.feature_writer import FeatureWriter
 
 
 def main() -> None:
-    """
-    Execute the complete feature engineering pipeline.
-    """
-
+ 
     logger.info("=" * 70)
     logger.info("Audience Analytics Feature Pipeline")
     logger.info("=" * 70)
