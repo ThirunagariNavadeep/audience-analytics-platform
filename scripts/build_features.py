@@ -1,10 +1,3 @@
-"""
-Build Feature Pipeline
-
-Processes the complete MovieLens ratings dataset
-and generates user and movie feature datasets.
-"""
-
 from pathlib import Path
 import time
 
