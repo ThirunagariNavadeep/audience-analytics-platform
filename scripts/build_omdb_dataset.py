@@ -1,6 +1,3 @@
-"""
-Build OMDb Enriched Dataset
-"""
 from pathlib import Path 
 import time
 from app.core.logging import logger
