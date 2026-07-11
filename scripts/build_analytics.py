@@ -9,10 +9,7 @@ from app.validation.analytics_validator import AnalyticsValidator
 
 
 def main() -> None:
-    """
-    Execute the analytics dataset pipeline.
-    """
-
+ 
     logger.info("=" * 70)
     logger.info("Audience Analytics Dataset Pipeline")
     logger.info("=" * 70)
